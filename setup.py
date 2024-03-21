@@ -12,8 +12,10 @@ setup(
     download_url="https://github.com/ftonioloviemar/vieutil/archive/refs/tags/v_0.1.tar.gz",  # I explain this later on
     keywords=[
         "viemar",
-        "password",
+        "util",
         "cryptography",
+        "logging",
+        "send_email",
     ],  # Keywords that define your package best
     install_requires=[  # I get to this in a second
         "cryptography"
