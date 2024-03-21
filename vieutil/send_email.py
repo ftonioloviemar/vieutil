@@ -5,10 +5,16 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 from email import encoders
+from tenacity import retry, stop_after_attempt
 # from vielog import get_viemar_logger
 
 # log = get_viemar_logger()
 # user = "sistema@viemar.com.br"
+
+
+@retry(stop=stop_after_attempt(10))
+def connect_smtp(server, port):
+    return smtplib.SMTP(server, port)
 
 
 def send_email(
@@ -66,7 +72,8 @@ def send_email(
         msg.attach(part)
 
     # log.debug(f"Conectando a {server}:{port}")
-    smtp = smtplib.SMTP(server, port)
+    #smtp = smtplib.SMTP(server, port)
+    smtp = connect_smtp(server, port)
     if use_tls:
         smtp.starttls()
     # smtp.login(username, password)
@@ -79,5 +86,5 @@ if __name__ == "__main__":
     send_email(
         to="ftoniolo@viemar.com.br",
         subject="Teste de envio de email",
-        text="Este é um teste!"
+        text="Este é um teste!",
     )
