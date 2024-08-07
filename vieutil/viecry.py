@@ -52,6 +52,6 @@ class Viecry:
 
 if __name__ == "__main__":
     cry = Viecry(dir="""J:\Ti\python\jupyter\erp""", host="erp", user="RPAGERASEPARACAO")
-    cry.encrypt("***")
+    cry.encrypt("****")
     pwd = cry.decrypt()
     print("never print your password!", pwd)
