@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name="vieutil",  # How you named your package folder (MyLib)
     packages=["vieutil"],  # Chose the same as "name"
-    version="0.3",  # Start with a small number and increase it with every change you make
+    version="0.5",  # Start with a small number and increase it with every change you make
     license="MIT",  # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     description="Password encryption",  # Give a short description about your library
     author="Fabio Toniolo Vieira Junior",  # Type in your name

@@ -5,6 +5,7 @@ setup.py
 vieutil/__init__.py
 vieutil/send_email.py
 vieutil/viecry.py
+vieutil/vieldap.py
 vieutil/vielog.py
 vieutil.egg-info/PKG-INFO
 vieutil.egg-info/SOURCES.txt
